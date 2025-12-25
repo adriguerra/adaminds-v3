@@ -41,10 +41,9 @@ export default function Home() {
         as="section"
         fillWidth
         fillHeight
-        minHeight="100vh"
         horizontal="center"
         vertical="center"
-        style={{ position: "relative" }}
+        style={{ position: "relative", minHeight: "100vh" }}
       >
         {/* Video Background */}
         <video
@@ -134,8 +133,7 @@ export default function Home() {
           <Column
             gap="m"
             fillWidth
-            maxWidth="600px"
-            style={{ marginTop: "var(--spacing-24)" }}
+            style={{ marginTop: "var(--spacing-24)", maxWidth: "600px" }}
           >
             <Text
               variant="body-default-l"

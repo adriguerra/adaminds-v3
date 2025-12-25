@@ -75,7 +75,7 @@ const fonts: FontsConfig = {
 const style: StyleConfig = {
   theme: "dark", // dark | light | system - forced to dark for black-first design
   neutral: "gray", // sand | gray | slate | custom
-  brand: "gray", // Using gray for minimal, neutral design - only CTA uses accent
+  brand: "cyan", // Using cyan for minimal design - accent color used for CTAs
   accent: "cyan", // cyan for CTA buttons only
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
