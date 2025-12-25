@@ -14,20 +14,20 @@ import {
 import { home } from "./index";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = "https://demo.magic-portfolio.com";
+const baseURL: string = "https://www.adaminds.com";
 
 const routes: RoutesConfig = {
   "/": true,
-  "/about": true,
-  "/work": true,
-  "/blog": true,
-  "/gallery": true,
+  "/about": false,
+  "/work": false,
+  "/blog": false,
+  "/gallery": false,
 };
 
 const display: DisplayConfig = {
-  location: true,
-  time: true,
-  themeSwitcher: true,
+  location: false,
+  time: false,
+  themeSwitcher: false, // No theme switcher for black-first design
 };
 
 // Enable password protection on selected routes
@@ -73,20 +73,20 @@ const fonts: FontsConfig = {
 
 // default customization applied to the HTML in the main layout.tsx
 const style: StyleConfig = {
-  theme: "system", // dark | light | system
+  theme: "dark", // dark | light | system - forced to dark for black-first design
   neutral: "gray", // sand | gray | slate | custom
-  brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  accent: "red", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  brand: "gray", // Using gray for minimal, neutral design - only CTA uses accent
+  accent: "cyan", // cyan for CTA buttons only
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
-  border: "playful", // rounded | playful | conservative
-  surface: "translucent", // filled | translucent
-  transition: "all", // all | micro | macro
+  border: "rounded", // rounded | playful | conservative
+  surface: "filled", // filled | translucent - using filled for solid backgrounds
+  transition: "micro", // all | micro | macro - minimal transitions
   scaling: "100", // 90 | 95 | 100 | 105 | 110
 };
 
 const dataStyle: DataStyleConfig = {
-  variant: "gradient", // flat | gradient | outline
+  variant: "flat", // flat | gradient | outline - no gradients
   mode: "categorical", // categorical | divergent | sequential
   height: 24, // default chart height
   axis: {
@@ -107,7 +107,7 @@ const effects: EffectsConfig = {
     radius: 100,
   },
   gradient: {
-    display: false,
+    display: false, // No gradients for black-first design
     opacity: 100,
     x: 50,
     y: 60,
@@ -118,20 +118,20 @@ const effects: EffectsConfig = {
     colorEnd: "page-background",
   },
   dots: {
-    display: true,
+    display: false, // No decorative elements
     opacity: 40,
     size: "2",
     color: "brand-background-strong",
   },
   grid: {
-    display: false,
+    display: false, // No decorative elements
     opacity: 100,
     color: "neutral-alpha-medium",
     width: "0.25rem",
     height: "0.25rem",
   },
   lines: {
-    display: false,
+    display: false, // No decorative elements
     opacity: 100,
     color: "neutral-alpha-weak",
     size: "16",
@@ -188,9 +188,9 @@ const mailchimp: MailchimpConfig = {
 const schema: SchemaConfig = {
   logo: "",
   type: "Organization",
-  name: "Once UI",
+  name: "Adaminds",
   description: home.description,
-  email: "lorant@once-ui.com",
+  email: "adrian@adaminds.com",
 };
 
 // social links

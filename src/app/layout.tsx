@@ -13,7 +13,7 @@ import {
   RevealFx,
   SpacingToken,
 } from "@once-ui-system/core";
-import { Footer, Header, RouteGuard, Providers } from "@/components";
+import { RouteGuard, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
 
 export async function generateMetadata() {
@@ -52,7 +52,7 @@ export default async function RootLayout({
               (function() {
                 try {
                   const root = document.documentElement;
-                  const defaultTheme = 'system';
+                  const defaultTheme = 'dark';
                   
                   // Set defaults from config
                   const config = ${JSON.stringify({
@@ -73,27 +73,8 @@ export default async function RootLayout({
                     root.setAttribute('data-' + key, value);
                   });
                   
-                  // Resolve theme
-                  const resolveTheme = (themeValue) => {
-                    if (!themeValue || themeValue === 'system') {
-                      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                    }
-                    return themeValue;
-                  };
-                  
-                  // Apply saved theme
-                  const savedTheme = localStorage.getItem('data-theme');
-                  const resolvedTheme = resolveTheme(savedTheme);
-                  root.setAttribute('data-theme', resolvedTheme);
-                  
-                  // Apply any saved style overrides
-                  const styleKeys = Object.keys(config);
-                  styleKeys.forEach(key => {
-                    const value = localStorage.getItem('data-' + key);
-                    if (value) {
-                      root.setAttribute('data-' + key, value);
-                    }
-                  });
+                  // Always use dark theme
+                  root.setAttribute('data-theme', 'dark');
                 } catch (e) {
                   console.error('Failed to initialize theme:', e);
                   document.documentElement.setAttribute('data-theme', 'dark');
@@ -122,7 +103,7 @@ export default async function RootLayout({
                 cursor: effects.mask.cursor,
               }}
               gradient={{
-                display: effects.gradient.display,
+                display: false,
                 opacity: effects.gradient.opacity as opacity,
                 x: effects.gradient.x,
                 y: effects.gradient.y,
@@ -133,20 +114,20 @@ export default async function RootLayout({
                 colorEnd: effects.gradient.colorEnd,
               }}
               dots={{
-                display: effects.dots.display,
+                display: false,
                 opacity: effects.dots.opacity as opacity,
                 size: effects.dots.size as SpacingToken,
                 color: effects.dots.color,
               }}
               grid={{
-                display: effects.grid.display,
+                display: false,
                 opacity: effects.grid.opacity as opacity,
                 color: effects.grid.color,
                 width: effects.grid.width,
                 height: effects.grid.height,
               }}
               lines={{
-                display: effects.lines.display,
+                display: false,
                 opacity: effects.lines.opacity as opacity,
                 size: effects.lines.size as SpacingToken,
                 thickness: effects.lines.thickness,
@@ -155,14 +136,11 @@ export default async function RootLayout({
               }}
             />
           </RevealFx>
-          <Flex fillWidth minHeight="16" s={{ hide: true }} />
-          <Header />
-          <Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>
+          <Flex zIndex={0} fillWidth horizontal="center" flex={1}>
             <Flex horizontal="center" fillWidth minHeight="0">
               <RouteGuard>{children}</RouteGuard>
             </Flex>
           </Flex>
-          <Footer />
         </Column>
       </Providers>
     </Flex>

@@ -96,11 +96,13 @@ export interface Home extends BasePageConfig {
   /** Featured badge, which appears above the headline */
   featured: {
     display: boolean;
-    title: React.ReactNode;
+    title: React.ReactNode | null;
     href: string;
   };
   /** The sub text which appears below the headline */
   subline: React.ReactNode;
+  /** Booking link for CTA buttons */
+  bookingLink?: string;
 }
 
 /**

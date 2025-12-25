@@ -2,14 +2,14 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Adrian",
+  lastName: "Guerra",
+  name: `Adrian Guerra`,
+  role: "Founder",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "adrian@adaminds.com",
+  location: "America/New_York",
+  languages: ["English"],
 };
 
 const newsletter: Newsletter = {
@@ -58,27 +58,20 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: "Adaminds - Outbound Growth Systems for Software Companies",
+  description: "Plug GTM systems into your business that fill calendars with high-intent, qualified sales calls.",
+  headline: <>Outbound Growth Systems for Software Companies</>,
   featured: {
-    display: true,
-    title: (
-      <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          Featured work
-        </Text>
-      </Row>
-    ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    display: false,
+    title: null,
+    href: "",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      Plug GTM systems into your business that fill calendars with high-intent, qualified sales calls.
+    </>
   ),
+  bookingLink: "https://cal.com/adaminds/discovery", // Update this with actual booking link
 };
 
 const about: About = {
