@@ -8,37 +8,62 @@ View the demo [here](https://demo.magic-portfolio.com).
 
 ## Getting started
 
+### Prerequisites
+
+- Node.js v18.17 or higher
+
+### Installation & Running
+
 **1. Clone the repository**
-```
+```bash
 git clone https://github.com/once-ui-system/magic-portfolio.git
+cd magic-portfolio
 ```
 
 **2. Install dependencies**
-```
+```bash
 npm install
 ```
 
-**3. Run dev server**
-```
+**3. Run the development server**
+```bash
 npm run dev
 ```
 
-**4. Edit config**
-```
-src/resources/once-ui.config.js
+The application will start on [http://localhost:3000](http://localhost:3000). Open it in your browser to see the portfolio.
+
+**4. Build for production**
+```bash
+npm run build
+npm run start
 ```
 
-**5. Edit content**
+### Available Scripts
+
+- `npm run dev` - Start the development server
+- `npm run build` - Build the application for production
+- `npm run start` - Start the production server (run `npm run build` first)
+- `npm run lint` - Run ESLint to check for code issues
+- `npm run biome-write` - Format code with Biome
+
+### Customization
+
+**Edit configuration**
 ```
-src/resources/content.js
+src/resources/once-ui.config.ts
 ```
 
-**6. Create blog posts / projects**
+**Edit content**
+```
+src/resources/content.tsx
+```
+
+**Create blog posts / projects**
 ```
 Add a new .mdx file to src/app/blog/posts or src/app/work/projects
 ```
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org).
 
 ## Documentation
 
