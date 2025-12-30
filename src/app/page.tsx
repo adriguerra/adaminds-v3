@@ -40,10 +40,9 @@ export default function Home() {
       <Column
         as="section"
         fillWidth
-        fillHeight
         horizontal="center"
         vertical="center"
-        style={{ position: "relative", minHeight: "100vh" }}
+        style={{ position: "relative", height: "100vh" }}
       >
         {/* Video Background */}
         <video
@@ -74,43 +73,6 @@ export default function Home() {
             zIndex: 1,
           }}
         />
-        
-        {/* Content */}
-        <Column
-          maxWidth="m"
-          horizontal="center"
-          align="center"
-          gap="l"
-          padding="xl"
-          style={{ position: "relative", zIndex: 2 }}
-        >
-          <Heading
-            wrap="balance"
-            variant="display-strong-l"
-            align="center"
-            style={{ color: "var(--neutral-on-background-strong)" }}
-          >
-            {home.headline}
-          </Heading>
-          <Text
-            wrap="balance"
-            variant="heading-default-l"
-            align="center"
-            style={{ color: "var(--neutral-on-background-medium)", maxWidth: "600px" }}
-          >
-            {home.subline}
-          </Text>
-          <Button
-            href={bookingLink}
-            variant="primary"
-            size="l"
-            weight="strong"
-            data-border="rounded"
-            style={{ marginTop: "var(--spacing-16)" }}
-          >
-            Book a call
-          </Button>
-        </Column>
       </Column>
 
       {/* Problem Alignment Section */}
